@@ -23,9 +23,10 @@ BOARD = [
 
 def reader():
 
+	global CAPS
+
 #	special purpose reader fit for the capitals.txt format
 	f = open('capitals.txt', 'r')
-	global CAPS
 
 	lines = f.readlines()
 	for line in lines:
@@ -65,16 +66,16 @@ def reader():
 
 def findCaps(_list):
 
+	global FoundCaps
+
 	no = 0
 
 #	a list such as 'abcd' will be checked at a ab abc abcd b bc bcd c cd d 
 #	and then flipped to dcba and checked likewise
 	for direction in range(2):
-
 		word = ''
 
 		for i in range(len(_list)):
-
 			for j in range(len(_list) - i):
 
 				word += _list[i+j]
