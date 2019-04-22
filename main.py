@@ -130,28 +130,19 @@ def main():
 		no += findCaps(diagonal)
 
 
-#	following lines probably is a built-in operation in numPy but I...
-#	made this on a plane in turbulence so blame it on the boogie
+#	copying the board and rotating it by 90 deg to check opposite diagonals	
+	rotB = np.rot90(board)
 
-#	transpose...
-	flipB = board.T
-
-#	...and flip. this equals a 90 deg rotation
-	for row in range(np.size(flipB[0])):
-		flipB[row] = np.flip(flipB[row])
-
-
-#	set to check opposite diagonals
 	print("\n(main) scanning other diags..\n")
 
 	for i in range(midToEdge):
 
 #		above mid	
-		diagonal = np.diag(flipB, i)
+		diagonal = np.diag(rotB, i)
 		no += findCaps(diagonal)
 
 #		below mid
-		diagonal = np.diag(flipB, -i)
+		diagonal = np.diag(rotB, -i)
 		no += findCaps(diagonal)
 		
 
