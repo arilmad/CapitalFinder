@@ -72,7 +72,7 @@ def findCaps(_list):
 
 #	a list such as 'abcd' will be checked at a ab abc abcd b bc bcd c cd d 
 #	and then flipped to dcba and checked likewise
-	for direction in range(2):
+	for _ in range(2):
 		word = ''
 
 		for i in range(len(_list)):
